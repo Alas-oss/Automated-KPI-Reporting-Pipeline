@@ -1,0 +1,14 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Data
+data/*.csv
+data/*.db
+
+# Output (keep only selected files manually)
+output/*.csv
+
+# OS
+.DS_Store
