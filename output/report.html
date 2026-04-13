@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce Business Intelligence Report</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #1f2937;
+        }
+
+        .container {
+            width: 92%;
+            max-width: 1280px;
+            margin: 32px auto;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #1f3c88, #2563eb);
+            color: white;
+            padding: 36px;
+            border-radius: 18px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 34px;
+        }
+
+        .hero p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.95;
+        }
+
+        .section {
+            background: white;
+            padding: 28px;
+            border-radius: 18px;
+            margin-bottom: 24px;
+            box-shadow: 0 6px 18px rgba(15, 23, 42, 0.08);
+        }
+
+        .section h2 {
+            margin-top: 0;
+            margin-bottom: 18px;
+            font-size: 24px;
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+        }
+
+        .kpi-card {
+            background: linear-gradient(180deg, #ffffff, #f8fafc);
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            border-radius: 16px;
+        }
+
+        .kpi-label {
+            color: #6b7280;
+            font-size: 14px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 30px;
+            font-weight: bold;
+            color: #111827;
+        }
+
+        .insight-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 18px;
+        }
+
+        .insight-card {
+            background: #f8fbff;
+            border: 1px solid #dbeafe;
+            border-left: 6px solid #2563eb;
+            padding: 18px;
+            border-radius: 14px;
+        }
+
+        .insight-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+
+        .chart-card img {
+            width: 100%;
+            border-radius: 12px;
+            margin-top: 10px;
+        }
+
+        .table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 14px;
+            font-size: 14px;
+        }
+
+        .table th,
+        .table td {
+            border: 1px solid #e5e7eb;
+            padding: 10px 12px;
+            text-align: left;
+        }
+
+        .table th {
+            background: #f9fafb;
+        }
+
+        .summary-box {
+            background: #f9fafb;
+            border: 1px solid #e5e7eb;
+            border-radius: 14px;
+            padding: 18px;
+            line-height: 1.7;
+            white-space: pre-wrap;
+        }
+
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 14px;
+            margin: 28px 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="hero">
+            <h1>E-commerce Business Intelligence Report</h1>
+            <p>
+                End-to-end student BI project using Python, SQL, SQLite, Pandas, and Matplotlib to analyze e-commerce performance, customer behavior, and revenue trends.
+            </p>
+        </div>
+
+        <div class="section">
+            <h2>Executive KPI Overview</h2>
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Orders</div>
+                    <div class="kpi-value">99,441</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Delivered Orders</div>
+                    <div class="kpi-value">96,478</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Cancelled Orders</div>
+                    <div class="kpi-value">625</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Revenue</div>
+                    <div class="kpi-value">$13,591,643.70</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Average Order Value</div>
+                    <div class="kpi-value">$137.75</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Unique Customers</div>
+                    <div class="kpi-value">99,441</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Orders per Customer</div>
+                    <div class="kpi-value">1.00</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Repeat Customer Rate</div>
+                    <div class="kpi-value">0.0%</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Key Business Insights</h2>
+            
+<div class="insight-grid">
+    <div class="insight-card">
+        <h3>Delivery Performance</h3>
+        <p>97.02% of all orders were delivered successfully, indicating strong fulfillment outcomes.</p>
+    </div>
+    <div class="insight-card">
+        <h3>Customer Retention</h3>
+        <p>0.0% of customers placed more than one order, suggesting retention is an area worth improving.</p>
+    </div>
+    <div class="insight-card">
+        <h3>Commercial Efficiency</h3>
+        <p>Average order value was $137.75, which gives a useful benchmark for basket-size monitoring.</p>
+    </div>
+</div>
+
+        </div>
+
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="summary-box">Business Intelligence Summary
+=============================
+
+Core KPIs
+---------
+Total Orders: 99441
+Delivered Orders: 96478
+Cancelled Orders: 625
+Total Revenue: 13591643.7
+Average Order Value: 137.75
+Unique Customers: 99441
+
+Customer Metrics
+----------------
+Orders per Customer: 1.0
+Repeat Customers: 0
+Repeat Customer Rate: 0.0%
+
+Operational Metrics
+-------------------
+Delivery Rate: 97.02%
+Cancellation Rate: 0.63%
+
+Key Insights
+------------
+1. The business processed a large order volume, with a very high delivery rate.
+2. Revenue rose strongly through 2017 and into 2018, suggesting marketplace growth over time.
+3. Cancellation rate is relatively low, indicating stable order fulfillment performance.
+4. Orders per customer and repeat customer rate suggest many customers may be one-time purchasers.
+5. Revenue concentration among top customers can be used to study customer value distribution.</div>
+        </div>
+
+        <div class="section">
+            <h2>Trend Analysis</h2>
+            <div class="chart-grid">
+                <div class="chart-card">
+                    <h3>Revenue by Month</h3>
+                    <img src="revenue_by_month.png" alt="Revenue by Month">
+                </div>
+                <div class="chart-card">
+                    <h3>Orders by Status</h3>
+                    <img src="orders_by_status.png" alt="Orders by Status">
+                </div>
+                <div class="chart-card">
+                    <h3>Revenue by Order Status</h3>
+                    <img src="revenue_by_status.png" alt="Revenue by Status">
+                </div>
+                <div class="chart-card">
+                    <h3>Top 10 Customers by Spend</h3>
+                    <img src="top_customers.png" alt="Top Customers by Spend">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Top Customers by Spend</h2>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>customer_id</th>
+      <th>total_spent</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1617b1357756262bfa56ab541c47bc16</td>
+      <td>13440.0</td>
+    </tr>
+    <tr>
+      <td>ec5b2ba62e574342386871631fafd3fc</td>
+      <td>7160.0</td>
+    </tr>
+    <tr>
+      <td>c6e2731c5b391845f6800c97401a43a9</td>
+      <td>6735.0</td>
+    </tr>
+    <tr>
+      <td>f48d464a0baaea338cb25f816991ab1f</td>
+      <td>6729.0</td>
+    </tr>
+    <tr>
+      <td>3fd6777bbce08a352fddd04e4a7cc8f6</td>
+      <td>6499.0</td>
+    </tr>
+    <tr>
+      <td>05455dfa7cd02f13d132aa7a6a9729c6</td>
+      <td>5934.6</td>
+    </tr>
+    <tr>
+      <td>df55c14d1476a9a3467f131269c2477f</td>
+      <td>4799.0</td>
+    </tr>
+    <tr>
+      <td>24bbf5fd2f2e1b359ee7de94defc4a15</td>
+      <td>4690.0</td>
+    </tr>
+    <tr>
+      <td>e0a2412720e9ea4f26c1ac985f6a7358</td>
+      <td>4599.9</td>
+    </tr>
+    <tr>
+      <td>3d979689f636322c62418b6346b1c6d2</td>
+      <td>4590.0</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+
+        <div class="section">
+            <h2>Orders by Status Table</h2>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>order_status</th>
+      <th>total_orders</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>delivered</td>
+      <td>96478</td>
+    </tr>
+    <tr>
+      <td>shipped</td>
+      <td>1107</td>
+    </tr>
+    <tr>
+      <td>canceled</td>
+      <td>625</td>
+    </tr>
+    <tr>
+      <td>unavailable</td>
+      <td>609</td>
+    </tr>
+    <tr>
+      <td>invoiced</td>
+      <td>314</td>
+    </tr>
+    <tr>
+      <td>processing</td>
+      <td>301</td>
+    </tr>
+    <tr>
+      <td>created</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <td>approved</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+
+        <div class="section">
+            <h2>Revenue by Status Table</h2>
+            <table border="1" class="dataframe table">
+  <thead>
+    <tr style="text-align: right;">
+      <th>order_status</th>
+      <th>revenue</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>delivered</td>
+      <td>13221498.11</td>
+    </tr>
+    <tr>
+      <td>shipped</td>
+      <td>150727.44</td>
+    </tr>
+    <tr>
+      <td>canceled</td>
+      <td>95235.27</td>
+    </tr>
+    <tr>
+      <td>invoiced</td>
+      <td>61526.37</td>
+    </tr>
+    <tr>
+      <td>processing</td>
+      <td>60439.22</td>
+    </tr>
+    <tr>
+      <td>unavailable</td>
+      <td>2007.69</td>
+    </tr>
+    <tr>
+      <td>approved</td>
+      <td>209.60</td>
+    </tr>
+  </tbody>
+</table>
+        </div>
+
+        <div class="footer">
+            Generated automatically from the project pipeline as part of a student business intelligence portfolio project.
+        </div>
+    </div>
+</body>
+</html>
